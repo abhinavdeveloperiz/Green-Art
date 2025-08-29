@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Green Art</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome (Icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- google font  -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+
+    <!-- AOS (Animate On Scroll) -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+
+    <style>
+        * {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html,
+        body {
+            overflow-x: hidden;
+            /* No horizontal scroll */
+            scroll-behavior: smooth;
+            /* Smooth scroll */
+            overscroll-behavior: none;
+        }
+    </style>
+
+    <style>
+        /* font style  */
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #1a1a1a;
+            /* neutral dark */
+            line-height: 1.6;
+            letter-spacing: -0.2px;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            margin: 0 0 0.5em 0;
+            line-height: 1.2;
+            color: #111;
+        }
+
+        h1 {
+            font-size: 3rem;
+            /* ~48px */
+            font-weight: 600;
+            letter-spacing: -0.5px;
+        }
+
+        h2 {
+            font-size: 2.25rem;
+            /* ~36px */
+            font-weight: 500;
+        }
+
+        h3 {
+            font-size: 1.75rem;
+            /* ~28px */
+            font-weight: 500;
+        }
+
+        h4 {
+            font-size: 1.5rem;
+            /* ~24px */
+            font-weight: 500;
+        }
+
+        h5 {
+            font-size: 1.25rem;
+            /* ~20px */
+            font-weight: 400;
+        }
+
+        h6 {
+            font-size: 1rem;
+            /* ~16px */
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #555;
+        }
+
+        p {
+            font-size: 1rem;
+            /* ~16px */
+            font-weight: 300;
+            margin-bottom: 1em;
+            color: #333;
+        }
+
+
+
+
+        /* Smooth scrolling for anchor links */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Optional: thin, subtle scrollbar for WebKit */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f9fafb;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #e5e7eb;
+            border-radius: 9999px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #d1d5db;
+        }
+    </style>
+</head>
+<!-- Floating Buttons -->
+<div class="fixed bottom-6 right-6 flex flex-col gap-4 z-50">
+    <!-- WhatsApp -->
+    <a href="https://wa.me/918943303889" target="_blank"
+        class="bg-green-500 text-white w-14 h-14 flex items-center justify-center rounded-full shadow-lg hover:scale-110 transition transform animate-bounce ">
+        <i class="fa-brands fa-whatsapp text-2xl"></i>
+    </a>
+
+    <!-- Call -->
+    <a href="tel:+918943303889"
+        class="bg-blue-500 hover:bg-blue-800 text-white w-14 h-14 flex items-center justify-center rounded-full shadow-lg hover:scale-110 transition transform animate-bounce">
+        <i class="fa-solid fa-phone text-xl"></i>
+    </a>
+</div>
+
+
+
+<body class="bg-white text-slate-800 antialiased">
+    <!-- Header / Navbar -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-white border-b border-slate-200">
+        <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="flex h-20 items-center justify-between">
+                <!-- Brand -->
+                <a href="/" class="flex items-center gap-2 group" aria-label="Green Art home">
+                    <img src="{% static 'images/logo.png' %}" alt="logo" class="h-20 w-auto object-contain" />
+                </a>
+
+                <!-- Desktop Links -->
+                <div class="hidden md:flex items-center gap-6">
+                    <a href="/" class="nav-link text-sm font-medium text-slate-700 hover:text-emerald-600 transition"
+                        data-aos="fade-down">Home</a>
+                    <a href="/about"
+                        class="nav-link text-sm font-medium text-slate-700 hover:text-emerald-600 transition"
+                        data-aos="fade-down" data-aos-duration="900">About</a>
+                    <a href="/services"
+                        class="nav-link text-sm font-medium text-slate-700 hover:text-emerald-600 transition"
+                        data-aos="fade-down" data-aos-duration="1100">Projects</a>
+                    <a href="/gallery"
+                        class="nav-link text-sm font-medium text-slate-700 hover:text-emerald-600 transition"
+                        data-aos="fade-down" data-aos-duration="1300">Gallery</a>
+                    <a href="/contact"
+                        class="inline-flex items-center gap-2 rounded-2xl border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-800 hover:shadow-lg transition"
+                        data-aos="fade-down" data-aos-duration="1500">
+                        <i class="fa-regular fa-paper-plane animate-bounce"></i>
+                        <span>Get in Touch</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Hamburger -->
+                <button id="menuBtn"
+                    class="md:hidden flex flex-col justify-center items-center w-10 h-10 rounded-xl border border-slate-300 text-slate-700 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-emerald-500 relative group"
+                    aria-label="Toggle menu" aria-controls="mobileMenu" aria-expanded="false">
+                    <span
+                        class="block w-6 h-0.5 bg-slate-700 transition-transform duration-300 ease-in-out group-[.open]:rotate-45 group-[.open]:translate-y-1.5"></span>
+                    <span
+                        class="block w-6 h-0.5 bg-slate-700 mt-1 transition-opacity duration-300 ease-in-out group-[.open]:opacity-0"></span>
+                    <span
+                        class="block w-6 h-0.5 bg-slate-700 mt-1 transition-transform duration-300 ease-in-out group-[.open]:-rotate-45 group-[.open]:-translate-y-1.5"></span>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="md:hidden hidden border-t border-slate-200 py-2" role="menu">
+                <a href="/home" class="block px-3 py-2 text-slate-700 hover:bg-slate-50 rounded-lg"
+                    role="menuitem">Home</a>
+                <a href="/about" class="block px-3 py-2 text-slate-700 hover:bg-slate-50 rounded-lg"
+                    role="menuitem">About</a>
+                <a href="/services" class="block px-3 py-2 text-slate-700 hover:bg-slate-50 rounded-lg"
+                    role="menuitem">Projects</a>
+                <a href="/gallery" class="block px-3 py-2 text-slate-700 hover:bg-slate-50 rounded-lg"
+                    role="menuitem">Gallery</a>
+                <a href="/contact" class="block px-3 py-2 text-slate-700 hover:bg-slate-50 rounded-lg"
+                    role="menuitem">Contact</a>
+                <div class="px-3 pt-1 pb-3">
+                    <a href="#contact"
+                        class="w-full inline-flex items-center justify-center gap-2 rounded-2xl border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-800 hover:shadow-md transition">
+                        <i class="fa-regular fa-paper-plane"></i>
+                        <span>Get in Touch</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    {% block content %}
+
+    {% endblock %}
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-200 bg-white">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-4" data-aos="fade-up">
+                <div>
+                    <img src="{% static 'images/logo.png' %}" alt="logo" class="h-32 mb-4">
+                </div>
+                <div>
+                    <h4 class="font-semibold">Company</h4>
+                    <ul class="mt-3 space-y-2 text-sm text-slate-600">
+                        <li><a href="/" class="hover:text-emerald-600">Home</a></li>
+                        <li><a href="/about" class="hover:text-emerald-600">About</a></li>
+                        <li><a href="/services" class="hover:text-emerald-600">Project</a></li>
+                        <li><a href="/gallery" class="hover:text-emerald-600">Gallery</a></li>
+                        <li><a href="/contact" class="hover:text-emerald-600">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold">Address</h4>
+                    <ul class="mt-3 space-y-2 text-sm text-slate-600">
+                        <li>
+                            <a href="https://maps.app.goo.gl/YzSHdoHQZihyt9b28"
+                                target="_blank" class="hover:text-emerald-600">
+                                St Sebastian arcade, <br>
+                                Mapranam - Nandikkara Rd, <br>
+                                near co-operative Supermarket, <br>
+                                Kerala - 680712
+                            </a>
+                        </li>
+                        <li>Phone: <a href="tel:+919876543210" class="hover:text-emerald-600">+91 98765 43210</a></li>
+                        <li>Email: <a href="mailto:info@greenart.com"
+                                class="hover:text-emerald-600">info@greenart.com</a></li>
+                    </ul>
+                </div>
+
+
+                <div>
+                    <h4 class="font-semibold">Follow</h4>
+                    <div class="mt-3 flex gap-3 text-slate-600">
+
+                        <a href="https://www.instagram.com/team_greenart" target="_blank" aria-label="Instagram"
+                            class="hover:text-emerald-600 text-3xl"><i class="fa-brands fa-instagram"></i></a>
+
+                        <a href="https://www.facebook.com/share/1PMcWEd7ZJ/" target="_blank" aria-label="facebook"
+                            class="hover:text-emerald-600 text-3xl"><i class="fa-brands fa-facebook"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="mt-10 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-slate-200 pt-6 text-sm text-slate-500">
+                <p>© <span id="year"></span> Green Art. All rights reserved.</p>
+                <div class="flex items-center gap-4">
+                    <a href="https://www.inspirezesttechnologies.com/" class="hover:text-slate-700">Designed And
+                        Developed by <p
+                            class="text-black hover:bg-gradient-to-r hover:from-purple-700 hover:to-blue-700 hover:text-transparent hover:bg-clip-text transition duration-300">
+                            InspireZest Technologies Pvt Ltd
+                        </p></a>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AOS script & simple JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS once, with smooth and subtle timing
+        AOS.init({ duration: 700, easing: 'ease-out-cubic', once: true });
+
+        // Mobile menu toggle
+        const menuBtn = document.getElementById("menuBtn");
+        const mobileMenu = document.getElementById("mobileMenu");
+
+        menuBtn.addEventListener("click", () => {
+            menuBtn.classList.toggle("open");
+            mobileMenu.classList.toggle("hidden");
+
+            const expanded = menuBtn.getAttribute("aria-expanded") === "true" || false;
+            menuBtn.setAttribute("aria-expanded", !expanded);
+        });
+
+        // Current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>

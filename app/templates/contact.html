@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<section class="relative bg-cover bg-center bg-fixed h-[60vh] flex items-center justify-center text-white"
+    style="background-image: url('https://images.pexels.com/photos/358636/pexels-photo-358636.jpeg');">
+
+    <!-- Overlay -->
+    <div class="absolute inset-0 bg-black/50"></div>
+
+    <!-- Content -->
+    <div class="relative z-10 text-center px-6">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4 text-white">Contact Us</h1>
+        <a href="/" class="max-w-2xl mx-auto text-lg md:text-xl mb-6 text-white">
+            Home > Contact
+        </a>
+    </div>
+</section>
+
+
+
+
+<section id="contact" class="relative bg-gray-50 py-16 px-6 md:px-20">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
+
+        <!-- Left: Contact Info + Form -->
+        <div>
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Get in Touch</h2>
+            <p class="text-gray-600 mb-8">
+                Have questions or want to work with us? Fill out the form or reach us through the details below.
+            </p>
+
+            <!-- Contact Details -->
+            <div class="space-y-4 mb-8">
+                <div class="flex items-center gap-3">
+                    <i class="fas fa-map-marker-alt text-green-600 text-xl"></i>
+                    <a href="https://maps.app.goo.gl/YzSHdoHQZihyt9b28" target="_blank"
+                        class="text-gray-700 hover:text-blue-600">
+                        St Sebastian arcade, Mapranam - Nandikkara Rd
+                    </a>
+                </div>
+                <div class="flex items-center gap-3">
+                    <i class="fas fa-phone text-green-600 text-xl"></i>
+                    <a href="tel:+918943303889" class="text-gray-700 hover:text-blue-600">+91 8943303889</a>
+                </div>
+                <div class="flex items-center gap-3">
+                    <i class="fas fa-envelope text-green-600 text-xl"></i>
+                    <a href="mailto:info@example.com" class="text-gray-700 hover:text-blue-600">info@example.com</a>
+                </div>
+            </div>
+
+
+            <!-- Contact Form -->
+            <form class="space-y-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <input type="text" placeholder="Your Name"
+                        class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-green-600 outline-none"
+                        required>
+                    <input type="email" placeholder="Your Email"
+                        class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-green-600 outline-none"
+                        required>
+                </div>
+                <input type="text" placeholder="Subject"
+                    class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-green-600 outline-none"
+                    required>
+                <textarea rows="5" placeholder="Your Message"
+                    class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-green-600 outline-none"
+                    required></textarea>
+                <button type="submit"
+                    class="px-6 py-3 bg-green-600 text-white rounded-lg shadow-md hover:bg-green-700 transition">Send
+                    Message</button>
+            </form>
+        </div>
+
+        <!-- Right: Google Map -->
+        <div class="w-full h-96 rounded-xl overflow-hidden shadow-lg">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.309348156832!2d76.2207919!3d10.3726679!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba7f73785696a19%3A0x2a0245ce5be1c620!2sGreenArt%20Builders%20%26%20Architects!5e1!3m2!1sen!2sin!4v1756448271199!5m2!1sen!2sin"
+                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
