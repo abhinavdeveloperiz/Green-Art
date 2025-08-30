@@ -3,7 +3,7 @@ from .models import Project,Images
 # Create your views here.
 
 def home(request):
-    projects=Images.objects.order_by("-id")[:6]
+    projects=Images.objects.order_by("-id")[:9]
     return render(request, 'home.html',{"projects":projects})
 
 def about(request):

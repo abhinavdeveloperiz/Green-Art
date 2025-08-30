@@ -104,6 +104,19 @@
     } */
 </style>
 
+<style>
+    .writing-mode-vertical-rl {
+        writing-mode: vertical-rl;
+    }
+
+    .text-orientation-mixed {
+        text-orientation: mixed;
+    }
+
+    h1 {
+        font-family: 'Lobster Two', cursive;
+    }
+</style>
 
 
 
@@ -112,49 +125,80 @@
     <img src="{% static 'images/header2.jpg' %}" alt="Background" class="w-full h-full object-cover" />
 </div>
 
-<!-- Main scroll container -->
-<div class="scroll-container h-screen overflow-y-auto overflow-x-hidden relative">
 
-    <!-- Section 1 -->
-    <section class="scroll-section relative h-screen flex flex-col md:flex-row">
-        <!-- Left content -->
-        <div class="w-full md:w-1/2 h-1/2 md:h-full relative overflow-hidden group" data-aos="fade-right"
-            data-aos-duration="1000">
-            <!-- First image (default) -->
-            <img src="{% static 'images/header1.jpg' %}" alt="Architectural "
-                class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 group-hover:opacity-0" />
 
-            <!-- Second image (visible on hover) -->
-            <img src="{% static 'images/header2.jpg' %}" alt="Architectural hover"
-                class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-700 group-hover:opacity-100" />
+<section class="relative bg-white overflow-hidden pt-28">
+    <!-- Slide Wrapper -->
+    <div class="slider relative">
 
-            <!-- Gradient overlay -->
-            <div
-                class="absolute inset-0 bg-gradient-to-r from-black/10 to-black/20 transition-opacity duration-500 group-hover:opacity-0">
+        <!-- Slide 1 -->
+        <div class="slider-item relative w-full transition-opacity duration-1000 opacity-100">
+            <div class="container mx-auto px-6 py-16 md:py-24 flex flex-col md:flex-row items-center gap-12">
+
+                <!-- Image -->
+                <div class="flex-1 md:order-last relative flex items-center justify-center">
+                    <img class="w-full max-h-[500px] object-cover rounded-3xl shadow-2xl"
+                        src="{% static 'images/header1.jpg' %}" alt="Modern House">
+
+                </div>
+
+                <!-- Text -->
+                <div class="flex-1 flex justify-center text-center">
+                    <div class="text-gray-900">
+                        <h1 class="text-3xl md:text-5xl lg:text-6xl mb-6 text-bold">
+                            Innovate, Build and Transform
+                        </h1>
+                        <a href="#view"
+                            class="inline-block bg-green-600 hover:bg-green-700 text-white font-semibold px-8 py-4 rounded-full shadow-lg transition-all duration-300 w-[220px] md:w-[250px] text-center">
+                            Click to know more
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <!-- Right content -->
-        <div class="w-full md:w-1/2 h-1/2 md:h-full flex items-center justify-center p-8 bg-white/80 backdrop-blur-sm"
-            data-aos="fade-left" data-aos-duration="1000">
-            <div class="max-w-lg float-animation">
-                <h2
-                    class="mt-4 text-3xl md:text-5xl font-bold leading-none bg-gradient-to-r from-black to-neutral-400 bg-clip-text text-transparent">
-                    Modern Architecture
-                </h2>
-                <p class="mt-6 text-neutral-800 text-lg leading-relaxed">
-                    Exploring the intersection of form and function in contemporary design.
-                </p>
-                <button
-                    class="mt-8 px-6 py-3 bg-black/60 hover:bg-black/90 text-white rounded-full text-sm font-medium transition-all duration-300 hover:tracking-wider">
-                    Explore More →
-                </button>
+        <!-- Slide 2 -->
+        <div class="slider-item absolute inset-0 transition-opacity duration-1000 opacity-0">
+            <div class="container mx-auto px-6 py-16 md:py-24 flex flex-col md:flex-row items-center gap-12">
+
+                <!-- Image -->
+                <div class="flex-1 md:order-last relative flex items-center justify-center">
+                    <img class="w-full max-h-[500px] object-cover rounded-3xl shadow-2xl"
+                        src="{% static 'images/header2.jpg' %}" alt="Modern House">
+
+                </div>
+
+                <!-- Text -->
+                <div class="flex-1 flex justify-center text-center">
+                    <div class="text-gray-900">
+                        <h1 class="text-3xl md:text-5xl lg:text-6xl mb-6 ">
+                            Innovate, Build and Transform
+                        </h1>
+                        <a href="#view"
+                            class="inline-block bg-green-600 hover:bg-green-700 text-white font-semibold px-8 py-4 rounded-full shadow-lg transition-all duration-300 w-[220px] md:w-[250px] text-center">
+                            Click to know more
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
-    </section>
-</div>
+    </div>
 
-<section class="bg-white py-16">
+    <!-- Dots Navigation -->
+    <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-3">
+        <span class="dot w-3 h-3 bg-green-600 rounded-full cursor-pointer"></span>
+        <span class="dot w-3 h-3 bg-gray-400 rounded-full cursor-pointer"></span>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+<section class="bg-white py-16" id="view">
     <div class="container mx-auto px-6 lg:px-20 flex flex-col lg:flex-row items-center gap-12">
 
         <!-- Left Image -->
@@ -167,20 +211,26 @@
             <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
                 ABOUT US
             </h2>
-            <p class="mb-4 leading-relaxed" data-aos="fade-up-left">
-                    In 2018, we started with a simple dream and a small space.
-                    That was the beginning of GreenArt Consultants — a humble venture built on big ideas, strong values,
-                    and a passion for transforming spaces into homes. With limited resources but unlimited
-                    determination, we began our journey in the world of architecture and construction.
+            <p class="mb-4 leading-relaxed text-justify" data-aos="fade-up-left">
+                In 2018, we started with a simple dream and a small space. That was the beginning of GreenArt
+                Consultants — a humble venture built on big ideas, strong values, and a passion for transforming spaces
+                into homes. With limited resources but unlimited determination, we began our journey in the world of
+                architecture and construction.
 
-
-            </p>
-            <p class="leading-relaxed" data-aos="fade-up-left">
                 Over the years, we faced challenges, learned from every step, and worked hard to build lasting trust
                 with our clients. Every project, big or small, became a stepping stone toward our growth. With a
                 commitment to quality, innovation, and affordability, we steadily earned our place in the industry.
 
+                After 7 years of relentless effort, we have proudly evolved into GreenArt Builders & Architects — a name
+                that reflects our expanded vision and strengthened identity. From a small beginning, we’ve grown into a
+                trusted brand known for building cost-friendly, beautiful, and durable homes that stand the test of
+                time.
+
+                As we move forward, our mission remains the same: to make dream homes a reality — one brick, one beam,
+                and one beautiful design at a time.
+
             </p>
+
         </div>
     </div>
 </section>
@@ -241,28 +291,35 @@
 <!-- projects  -->
 
 <section class="py-16 bg-white from-gray-900 to-gray-800">
-  <div class=" mx-auto px-6 lg:px-12">
-    <!-- Heading -->
-    <h2 class="text-2xl md:text-3xl font-extrabold text-center mb-12 text-black tracking-wide" data-aos="fade-up">
-      OUR <span class="text-green-500">PROJECTS</span>
-    </h2>
+    <div class=" mx-auto px-6 lg:px-12">
+        <!-- Heading -->
+        <h2 class="text-2xl md:text-3xl font-extrabold text-center mb-12 text-black tracking-wide" data-aos="fade-up">
+            OUR <span class="text-green-500">PROJECTS</span>
+        </h2>
 
-    <!-- Grid -->
-    <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-8">
-      {% for image in projects %}
-      <div class="group relative overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500" data-aos="slide-right">
-        <!-- Project Image -->
-        <img src="{{ image.image.url }}" alt="Project" 
-             class="w-full h-40 md:h-72 lg:h-80 object-cover transform group-hover:scale-110 transition-transform duration-500" >
+        <!-- Grid -->
+        <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-8">
+            {% for image in projects %}
+            <div class="group relative overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500"
+                data-aos="slide-right">
+                <!-- Project Image -->
+                <img src="{{ image.image.url }}" alt="Project"
+                    class="w-full h-40 md:h-72 lg:h-80 object-cover transform group-hover:scale-110 transition-transform duration-500">
 
-        <!-- Overlay -->
-        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
-          <h3 class="text-lg md:text-xl font-semibold text-white">{{image.title}}</h3>
+                <!-- Overlay -->
+                <div
+                    class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
+                    <h3 class="text-lg md:text-xl font-semibold text-white">{{image.title}}</h3>
+                </div>
+            </div>
+            {% endfor %}
+
         </div>
-      </div>
-      {% endfor %}
+        <a href="/gallery"
+            class="flex justify-center mx-auto bg-green-600 hover:bg-green-700 text-white w-[200px] rounded-2xl p-2 mt-12">View
+            More</a>
     </div>
-  </div>
+
 </section>
 
 
@@ -315,70 +372,118 @@
 
 
 <!-- testimonials  -->
-<section class=" mx-auto w-full px-10 bg-white text-black pt-6">
-    <div class="flex items-center justify-center flex-col gap-y-2 py-5">
-        <h2 class="text-xl font-semibold text-gray-800 tracking-wide uppercase ">Testimonials</h2>
-        <p class="text-lg font-medium text-slate-700/70 dark:text-gray-400">Discover how our service can benefit you</p>
+<section class="py-16 bg-white text-black">
+  <div class="max-w-4xl mx-auto text-center">
+    <h2 class="text-3xl font-bold mb-10">What Our Clients Say</h2>
+
+    <!-- Carousel Container -->
+    <div class="relative overflow-hidden">
+
+      <!-- Slides -->
+      <div id="carousel" class="flex transition-transform duration-700">
+
+        <!-- Slide 1 -->
+        <div class="w-full flex-shrink-0 px-6">
+          <div class="bg-white text-black p-8 rounded-2xl shadow-xl">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg"
+              class="w-20 h-20 mx-auto rounded-full mb-4 border-4 border-gray-200 shadow" alt="">
+            <p class="text-lg italic mb-4">"This platform completely transformed the way we work. Excellent support and design!"</p>
+            <h4 class="font-bold text-xl">John Carter</h4>
+            <p class="text-sm text-gray-500">CEO, BrightTech</p>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="w-full flex-shrink-0 px-6">
+          <div class="bg-white text-black p-8 rounded-2xl shadow-xl">
+            <img src="https://randomuser.me/api/portraits/women/65.jpg"
+              class="w-20 h-20 mx-auto rounded-full mb-4 border-4 border-gray-200 shadow" alt="">
+            <p class="text-lg italic mb-4">"The best experience I've ever had! Everything runs so smoothly now."</p>
+            <h4 class="font-bold text-xl">Sophia Lee</h4>
+            <p class="text-sm text-gray-500">Marketing Manager</p>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="w-full flex-shrink-0 px-6">
+          <div class="bg-white text-black p-8 rounded-2xl shadow-xl">
+            <img src="https://randomuser.me/api/portraits/men/75.jpg"
+              class="w-20 h-20 mx-auto rounded-full mb-4 border-4 border-gray-200 shadow" alt="">
+            <p class="text-lg italic mb-4">"Highly recommend this service to anyone looking for quality and reliability."</p>
+            <h4 class="font-bold text-xl">Michael Johnson</h4>
+            <p class="text-sm text-gray-500">Entrepreneur</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Navigation Arrows -->
+      <button onclick="prevSlide()"
+        class="absolute top-1/2 left-4 -translate-y-1/2 bg-gray-700 text-white p-3 rounded-full hover:bg-gray-600">
+        &#8592;
+      </button>
+      <button onclick="nextSlide()"
+        class="absolute top-1/2 right-4 -translate-y-1/2 bg-gray-700 text-white p-3 rounded-full hover:bg-gray-600">
+        &#8594;
+      </button>
     </div>
-    <div class="grid grid-cols-1 lg:grid-cols-5 gap-5 w-full" data-aos="fade-left">
-        <div
-            class="border p-7 rounded-xl bg-white  drop-shadow-md border-neutral-200/50 col-span-2 flex flex-col gap-y-10 justify-between">
-            <div class="flex flex-col gap-y-3.5">
-                <p class="font-bold text-xl">Brilliant house to rent</p>
-                <p class="font-medium text-slate-700/90 dark:text-gray-800">All eFounders teams have moved to Cycle for
-                    all
-                    things product management and it is truly a game-changer.</p>
-            </div>
-            <div class="flex flex-col">
-                <img src="https://randomuser.me/api/portraits/women/54.jpg" alt="Jane Cooper" class="h-10 w-10">
-                <p class="pt-2 text-sm font-semibold">Jane Cooper</p>
-                <p class="text-sm font-medium text-slate-700/70 dark:text-gray-400">CEO at ABC Corporation</p>
-            </div>
-        </div>
-        <div
-            class="border p-7 rounded-xl bg-white  drop-shadow-md border-neutral-200/50 col-span-3 flex flex-col gap-y-10 justify-between">
-            <div class="flex flex-col gap-y-3.5">
-                <p class="font-bold text-xl">Efficient customer support</p>
-                <p class="font-medium text-slate-700/90 dark:text-gray-800">The customer support team at our service is
-                    incredibly responsive and helpful. They went above and beyond to assist me with my issue.</p>
-            </div>
-            <div class="flex flex-col">
-                <img src="https://randomuser.me/api/portraits/women/30.jpg" alt="John Doe" class="h-10 w-10">
-                <p class="pt-2 text-sm font-semibold">Emily Smith</p>
-                <p class="text-sm font-medium text-slate-700/70 dark:text-gray-400">Marketing Manager at ABC Company</p>
-            </div>
-        </div>
-        <div
-            class="border p-7 rounded-xl bg-white  drop-shadow-md border-neutral-200/50 col-span-3 flex flex-col gap-y-10 justify-between">
-            <div class="flex flex-col gap-y-3.5">
-                <p class="font-bold text-xl">Seamless integration process</p>
-                <p class="font-medium text-slate-700/90 dark:text-gray-800">Integrating our systems with our service was
-                    smooth
-                    and hassle-free. The support team guided us through every step of the process.</p>
-            </div>
-            <div class="flex flex-col">
-                <img src="https://randomuser.me/api/portraits/women/90.jpg" alt="Jane Doe" class="h-10 w-10">
-                <p class="pt-2 text-sm font-semibold">Sarah Brown</p>
-                <p class="text-sm font-medium text-slate-700/70 dark:text-gray-400">CTO at XYZ Corporation</p>
-            </div>
-        </div>
-        <div
-            class="border p-7 rounded-xl bg-white  drop-shadow-md border-neutral-200/50 col-span-2 flex flex-col gap-y-10 justify-between">
-            <div class="flex flex-col gap-y-3.5">
-                <p class="font-bold text-xl">Reliable service uptime</p>
-                <p class="font-medium text-slate-700/90 dark:text-gray-800">Our service has consistently maintained high
-                    uptime,
-                    ensuring that our operations run smoothly without any disruptions.</p>
-            </div>
-            <div class="flex flex-col">
-                <img src="https://randomuser.me/api/portraits/men/90.jpg" alt="Ash Doe" class="h-10 w-10">
-                <p class="pt-2 text-sm font-semibold">James White</p>
-                <p class="text-sm font-medium text-slate-700/70 dark:text-gray-400">COO at XYZ Corporation</p>
-            </div>
-        </div>
-    </div>
+  </div>
 </section>
 
 
+
+<script>
+    const carousel = document.getElementById("carousel");
+    const totalSlides = carousel.children.length;
+    let index = 0;
+
+    function showSlide(i) {
+        index = (i + totalSlides) % totalSlides; // loop
+        carousel.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    function nextSlide() {
+        showSlide(index + 1);
+    }
+
+    function prevSlide() {
+        showSlide(index - 1);
+    }
+
+    // Auto play every 5s
+    setInterval(nextSlide, 5000);
+</script>
+
+
+
+<script>
+    const slides = document.querySelectorAll(".slider-item");
+    const dots = document.querySelectorAll(".dot");
+    let index = 0;
+
+    function showSlide(i) {
+        slides.forEach((slide, idx) => {
+            slide.style.opacity = idx === i ? "1" : "0";
+        });
+        dots.forEach((dot, idx) => {
+            dot.classList.toggle("bg-green-600", idx === i);
+            dot.classList.toggle("bg-gray-400", idx !== i);
+        });
+    }
+
+    dots.forEach((dot, i) => {
+        dot.addEventListener("click", () => {
+            index = i;
+            showSlide(index);
+        });
+    });
+
+    setInterval(() => {
+        index = (index + 1) % slides.length;
+        showSlide(index);
+    }, 5000);
+
+    showSlide(index);
+</script>
 
 {% endblock %}
