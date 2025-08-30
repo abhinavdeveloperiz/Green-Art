@@ -18,7 +18,10 @@
   <div class="max-w-6xl mx-auto px-4">
     <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-6">
       {% for image in images %}
-      <div class="overflow-hidden rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300" data-aos="fade-right">
+      <div 
+        class="overflow-hidden rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 cursor-pointer"
+        onclick="openModal('{{ image.image.url }}')" 
+        data-aos="fade-right">
         <img 
           src="{{ image.image.url }}" 
           alt="Gallery Image" 
@@ -30,6 +33,30 @@
   </div>
 </section>
 
+<!-- Modal -->
+<div id="imageModal" class="fixed inset-0 bg-black/80 hidden items-center justify-center z-50 p-4">
+  <span class="absolute top-5 right-5 text-white text-3xl font-bold cursor-pointer" onclick="closeModal()">&times;</span>
+  <img id="modalImage" src="" alt="Popup Image" class="max-h-[90vh] max-w-full rounded-lg shadow-lg mx-auto">
+</div>
 
+<script>
+  function openModal(src) {
+    document.getElementById("modalImage").src = src;
+    document.getElementById("imageModal").classList.remove("hidden");
+    document.getElementById("imageModal").classList.add("flex");
+  }
+
+  function closeModal() {
+    document.getElementById("imageModal").classList.remove("flex");
+    document.getElementById("imageModal").classList.add("hidden");
+  }
+
+  // Close modal on clicking outside image
+  document.getElementById("imageModal").addEventListener("click", function(e) {
+    if (e.target.id === "imageModal") {
+      closeModal();
+    }
+  });
+</script>
 
 {% endblock %}
