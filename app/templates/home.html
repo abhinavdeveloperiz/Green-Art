@@ -4,97 +4,97 @@
 
 
 <style>
-    @keyframes reveal {
-        from {
-            clip-path: inset(0 100% 0 0);
-        }
-
-        to {
-            clip-path: inset(0 0 0 0);
-        }
+  @keyframes reveal {
+    from {
+      clip-path: inset(0 100% 0 0);
     }
 
-    @keyframes textReveal {
-        from {
-            transform: translateY(100%);
-            opacity: 0;
-        }
+    to {
+      clip-path: inset(0 0 0 0);
+    }
+  }
 
-        to {
-            transform: translateY(0);
-            opacity: 1;
-        }
+  @keyframes textReveal {
+    from {
+      transform: translateY(100%);
+      opacity: 0;
     }
 
-    @keyframes float {
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
 
-        0%,
-        100% {
-            transform: translateY(0);
-        }
+  @keyframes float {
 
-        50% {
-            transform: translateY(-10px);
-        }
+    0%,
+    100% {
+      transform: translateY(0);
     }
 
-    @keyframes shine {
-        from {
-            transform: translateX(-100%) rotate(45deg);
-        }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
 
-        to {
-            transform: translateX(200%) rotate(45deg);
-        }
+  @keyframes shine {
+    from {
+      transform: translateX(-100%) rotate(45deg);
     }
 
-    .shine-effect::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg,
-                transparent,
-                rgba(255, 255, 255, 0.2),
-                transparent);
-        transform: translateX(-100%) rotate(45deg);
+    to {
+      transform: translateX(200%) rotate(45deg);
     }
+  }
 
-    .shine-effect:hover::before {
-        animation: shine 1.5s;
-    }
+  .shine-effect::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent);
+    transform: translateX(-100%) rotate(45deg);
+  }
 
-    .float-animation {
-        animation: float 6s ease-in-out infinite;
-    }
+  .shine-effect:hover::before {
+    animation: shine 1.5s;
+  }
 
-    .split-reveal {
-        animation: reveal 1.2s cubic-bezier(0.77, 0, 0.175, 1);
-    }
+  .float-animation {
+    animation: float 6s ease-in-out infinite;
+  }
 
-    .text-reveal {
-        animation: textReveal 0.8s cubic-bezier(0.77, 0, 0.175, 1);
-    }
+  .split-reveal {
+    animation: reveal 1.2s cubic-bezier(0.77, 0, 0.175, 1);
+  }
 
-    .scroll-container {
-        scroll-snap-type: y mandatory;
-        -webkit-overflow-scrolling: touch;
-    }
+  .text-reveal {
+    animation: textReveal 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+  }
 
-    .scroll-section {
-        scroll-snap-align: start;
-        scroll-snap-stop: always;
-    }
+  .scroll-container {
+    scroll-snap-type: y mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
 
-    .content-mask {
-        -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
-        mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
-    }
+  .scroll-section {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
 
-    /* testiminials  */
-    /* .scrollbar-hide::-webkit-scrollbar {
+  .content-mask {
+    -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+  }
+
+  /* testiminials  */
+  /* .scrollbar-hide::-webkit-scrollbar {
         display: none;
     }
 
@@ -105,24 +105,24 @@
 </style>
 
 <style>
-    .writing-mode-vertical-rl {
-        writing-mode: vertical-rl;
-    }
+  .writing-mode-vertical-rl {
+    writing-mode: vertical-rl;
+  }
 
-    .text-orientation-mixed {
-        text-orientation: mixed;
-    }
+  .text-orientation-mixed {
+    text-orientation: mixed;
+  }
 
-    h1 {
-        font-family: 'Lobster Two', cursive;
-    }
+  h1 {
+    font-family: 'Lobster Two', cursive;
+  }
 </style>
 
 
 
 <!-- Fixed background -->
 <div class="fixed inset-0 -z-10">
-    <img src="{% static 'images/header2.jpg' %}" alt="Background" class="w-full h-full object-cover" />
+  <img src="{% static 'images/header2.jpg' %}" alt="Background" class="w-full h-full object-cover" />
 </div>
 
 
@@ -136,8 +136,8 @@
       <div class="container mx-auto px-6 py-16 md:py-24 flex flex-col md:flex-row items-center gap-12">
         <!-- Image -->
         <div class="flex-1 md:order-last relative flex items-center justify-center">
-          <img class="w-full max-h-[500px] object-cover rounded-3xl shadow-2xl"
-            src="{% static 'images/header1.jpg' %}" alt="Modern House">
+          <img class="w-full max-h-[500px] object-cover rounded-3xl shadow-2xl" src="{% static 'images/header1.jpg' %}"
+            alt="Modern House">
         </div>
         <!-- Text -->
         <div class="flex-1 flex justify-center text-center">
@@ -159,8 +159,8 @@
       <div class="container mx-auto px-6 py-16 md:py-24 flex flex-col md:flex-row items-center gap-12">
         <!-- Image -->
         <div class="flex-1 md:order-last relative flex items-center justify-center">
-          <img class="w-full max-h-[500px] object-cover rounded-3xl shadow-2xl"
-            src="{% static 'images/header2.jpg' %}" alt="Modern House">
+          <img class="w-full max-h-[500px] object-cover rounded-3xl shadow-2xl" src="{% static 'images/header2.jpg' %}"
+            alt="Modern House">
         </div>
         <!-- Text -->
         <div class="flex-1 flex justify-center text-center">
@@ -194,91 +194,91 @@
 
 
 <section class="bg-white py-16" id="view">
-    <div class="container mx-auto px-6 lg:px-20 flex flex-col lg:flex-row items-center gap-12">
+  <div class="container mx-auto px-6 lg:px-20 flex flex-col lg:flex-row items-center gap-12">
 
-        <!-- Left Image -->
-        <div class="w-full lg:w-1/2" data-aos="fade-up-right">
-            <img src="{% static 'images/about.jpg' %}" alt="About GreenArt Builders" class="rounded-2xl shadow-lg">
-        </div>
-
-        <!-- Right Content -->
-        <div class="w-full lg:w-1/2 text-gray-700">
-            <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
-                ABOUT US
-            </h2>
-            <p class="mb-4 leading-relaxed text-justify" data-aos="fade-up-left">
-                In 2018, we started with a simple dream and a small space. That was the beginning of GreenArt
-                Consultants — a humble venture built on big ideas, strong values, and a passion for transforming spaces
-                into homes. With limited resources but unlimited determination, we began our journey in the world of
-                architecture and construction.
-
-                Over the years, we faced challenges, learned from every step, and worked hard to build lasting trust
-                with our clients. Every project, big or small, became a stepping stone toward our growth. With a
-                commitment to quality, innovation, and affordability, we steadily earned our place in the industry.
-
-                After 7 years of relentless effort, we have proudly evolved into GreenArt Builders & Architects — a name
-                that reflects our expanded vision and strengthened identity. From a small beginning, we’ve grown into a
-                trusted brand known for building cost-friendly, beautiful, and durable homes that stand the test of
-                time.
-
-                As we move forward, our mission remains the same: to make dream homes a reality — one brick, one beam,
-                and one beautiful design at a time.
-
-            </p>
-
-        </div>
+    <!-- Left Image -->
+    <div class="w-full lg:w-1/2" data-aos="fade-up-right">
+      <img src="{% static 'images/about.jpg' %}" alt="About GreenArt Builders" class="rounded-2xl shadow-lg">
     </div>
+
+    <!-- Right Content -->
+    <div class="w-full lg:w-1/2 text-gray-700">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-900" >
+        ABOUT US
+      </h2>
+      <p class="mb-4 leading-relaxed text-justify" data-aos="fade-up-left">
+        In 2018, we started with a simple dream and a small space. That was the beginning of GreenArt
+        Consultants — a humble venture built on big ideas, strong values, and a passion for transforming spaces
+        into homes. With limited resources but unlimited determination, we began our journey in the world of
+        architecture and construction.</p>
+
+      <p class="mb-4 leading-relaxed text-justify" data-aos="fade-up-right"> Over the years, we faced challenges, learned from every step, and worked hard to build lasting trust
+        with our clients. Every project, big or small, became a stepping stone toward our growth. With a
+        commitment to quality, innovation, and affordability, we steadily earned our place in the industry.</p>
+
+      <p  class="mb-4 leading-relaxed text-justify" data-aos="fade-up-left">After 7 years of relentless effort, we have proudly evolved into GreenArt Builders & Architects — a name
+        that reflects our expanded vision and strengthened identity. From a small beginning, we’ve grown into a
+        trusted brand known for building cost-friendly, beautiful, and durable homes that stand the test of
+        time.</p>
+
+      <p  class="mb-4 leading-relaxed text-justify" data-aos="fade-up-right">As we move forward, our mission remains the same: to make dream homes a reality — one brick, one beam,
+        and one beautiful design at a time.
+
+      </p>
+
+    </div>
+  </div>
 </section>
 
 
 <!-- services  -->
 
 <section class="relative py-16 bg-green-900/50 ">
-    <div class="max-w-7xl mx-auto px-6 text-center text-white">
-        <!-- Title -->
-        <h2 class="text-4xl font-bold mb-16 tracking-wide text-white">WHY US.</h2>
+  <div class="max-w-7xl mx-auto px-6 text-center text-white">
+    <!-- Title -->
+    <h2 class="text-4xl font-bold mb-16 tracking-wide text-white">WHY US.</h2>
 
-        <!-- Icons Row -->
-        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-10">
+    <!-- Icons Row -->
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-10">
 
-            <!-- Card 1 -->
-            <div class="flex flex-col items-center" data-aos="fade-down" data-aos-duration="500">
-                <i class="fa-solid fa-indian-rupee-sign text-6xl mb-4"></i>
-                <p class="text-sm font-semibold uppercase tracking-wide text-white">Budget Friendly</p>
-            </div>
+      <!-- Card 1 -->
+      <div class="flex flex-col items-center" data-aos="fade-down" data-aos-duration="500">
+        <i class="fa-solid fa-indian-rupee-sign text-6xl mb-4"></i>
+        <p class="text-sm font-semibold uppercase tracking-wide text-white">Budget Friendly</p>
+      </div>
 
-            <!-- Card 2 -->
-            <div class="flex flex-col items-center" data-aos="fade-down" data-aos-duration="800">
-                <i class="fa-solid fa-receipt text-6xl mb-4"></i>
-                <p class="text-sm font-semibold uppercase tracking-wide text-white">Complete Transparency</p>
-            </div>
+      <!-- Card 2 -->
+      <div class="flex flex-col items-center" data-aos="fade-down" data-aos-duration="800">
+        <i class="fa-solid fa-receipt text-6xl mb-4"></i>
+        <p class="text-sm font-semibold uppercase tracking-wide text-white">Complete Transparency</p>
+      </div>
 
-            <!-- Card 3 -->
-            <div class="flex flex-col items-center" data-aos="fade-down" data-aos-duration="1100">
-                <i class="fa-solid fa-building text-6xl mb-4"></i>
-                <p class="text-sm font-semibold uppercase tracking-wide text-white">Top Builder</p>
-            </div>
+      <!-- Card 3 -->
+      <div class="flex flex-col items-center" data-aos="fade-down" data-aos-duration="1100">
+        <i class="fa-solid fa-building text-6xl mb-4"></i>
+        <p class="text-sm font-semibold uppercase tracking-wide text-white">Top Builder</p>
+      </div>
 
-            <!-- Card 4 -->
-            <div class="flex flex-col items-center" data-aos="fade-down" data-aos-duration="1400">
-                <i class="fa-solid fa-users text-6xl mb-4"></i>
-                <p class="text-sm font-semibold uppercase tracking-wide text-white">Experienced Team</p>
-            </div>
+      <!-- Card 4 -->
+      <div class="flex flex-col items-center" data-aos="fade-down" data-aos-duration="1400">
+        <i class="fa-solid fa-users text-6xl mb-4"></i>
+        <p class="text-sm font-semibold uppercase tracking-wide text-white">Experienced Team</p>
+      </div>
 
-            <!-- Card 5 -->
-            <div class="flex flex-col items-center" data-aos="fade-down" data-aos-duration="1700">
-                <i class="fa-regular fa-clock text-6xl mb-4"></i>
-                <p class="text-sm font-semibold uppercase tracking-wide text-white">Timely Delivery</p>
-            </div>
+      <!-- Card 5 -->
+      <div class="flex flex-col items-center" data-aos="fade-down" data-aos-duration="1700">
+        <i class="fa-regular fa-clock text-6xl mb-4"></i>
+        <p class="text-sm font-semibold uppercase tracking-wide text-white">Timely Delivery</p>
+      </div>
 
-            <!-- Card 6 -->
-            <div class="flex flex-col items-center" data-aos="fade-down" data-aos-duration="2000">
-                <i class="fa-solid fa-house-chimney text-6xl mb-4"></i>
-                <p class="text-sm font-semibold uppercase tracking-wide text-white">Complimentary Designs</p>
-            </div>
+      <!-- Card 6 -->
+      <div class="flex flex-col items-center" data-aos="fade-down" data-aos-duration="2000">
+        <i class="fa-solid fa-house-chimney text-6xl mb-4"></i>
+        <p class="text-sm font-semibold uppercase tracking-wide text-white">Complimentary Designs</p>
+      </div>
 
-        </div>
     </div>
+  </div>
 </section>
 
 
@@ -286,34 +286,34 @@
 <!-- projects  -->
 
 <section class="py-16 bg-white from-gray-900 to-gray-800">
-    <div class=" mx-auto px-6 lg:px-12">
-        <!-- Heading -->
-        <h2 class="text-2xl md:text-3xl font-extrabold text-center mb-12 text-black tracking-wide" data-aos="fade-up">
-            OUR <span class="text-green-500">PROJECTS</span>
-        </h2>
+  <div class=" mx-auto px-6 lg:px-12">
+    <!-- Heading -->
+    <h2 class="text-2xl md:text-3xl font-extrabold text-center mb-12 text-black tracking-wide" data-aos="fade-up">
+      OUR <span class="text-green-500">PROJECTS</span>
+    </h2>
 
-        <!-- Grid -->
-        <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-8">
-            {% for image in projects %}
-            <div class="group relative overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500"
-                data-aos="slide-right">
-                <!-- Project Image -->
-                <img src="{{ image.image.url }}" alt="Project"
-                    class="w-full h-40 md:h-72 lg:h-80 object-cover transform group-hover:scale-110 transition-transform duration-500">
+    <!-- Grid -->
+    <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-8">
+      {% for image in projects %}
+      <div class="group relative overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500"
+        data-aos="slide-right">
+        <!-- Project Image -->
+        <img src="{{ image.image.url }}" alt="Project"
+          class="w-full h-40 md:h-72 lg:h-80 object-cover transform group-hover:scale-110 transition-transform duration-500">
 
-                <!-- Overlay -->
-                <div
-                    class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
-                    <h3 class="text-lg md:text-xl font-semibold text-white">{{image.title}}</h3>
-                </div>
-            </div>
-            {% endfor %}
-
+        <!-- Overlay -->
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
+          <h3 class="text-lg md:text-xl font-semibold text-white">{{image.title}}</h3>
         </div>
-        <a href="/gallery"
-            class="flex justify-center mx-auto bg-green-600 hover:bg-green-700 text-white w-[200px] rounded-2xl p-2 mt-12">View
-            More</a>
+      </div>
+      {% endfor %}
+
     </div>
+    <a href="/gallery"
+      class="flex justify-center mx-auto bg-green-600 hover:bg-green-700 text-white w-[200px] rounded-2xl p-2 mt-12">View
+      More</a>
+  </div>
 
 </section>
 
@@ -322,46 +322,46 @@
 <!-- process  -->
 
 <section class="py-16 bg-white">
-    <div class="max-w-6xl mx-auto text-center px-6">
-        <!-- Title -->
-        <h2 class="text-xl font-semibold text-gray-800 tracking-wide uppercase mb-12">
-            STEPS TO HOME CONSTRUCTION<span class="text-emerald-600">.</span>
-        </h2>
+  <div class="max-w-6xl mx-auto text-center px-6">
+    <!-- Title -->
+    <h2 class="text-xl font-semibold text-gray-800 tracking-wide uppercase mb-12">
+      STEPS TO HOME CONSTRUCTION<span class="text-emerald-600">.</span>
+    </h2>
 
-        <!-- Steps -->
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+    <!-- Steps -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
 
-            <!-- Step 1 -->
-            <div class="flex flex-col items-center " data-aos="fade-up" data-aos-duration="500">
-                <i
-                    class="fa-solid fa-circle-check text-emerald-500 text-6xl mb-4 transition-colors duration-300 hover:text-emerald-800 hover:scale-110 "></i>
-                <p class="text-gray-700 text-sm font-medium uppercase">Select Your Material</p>
-            </div>
+      <!-- Step 1 -->
+      <div class="flex flex-col items-center " data-aos="fade-up" data-aos-duration="500">
+        <i
+          class="fa-solid fa-circle-check text-emerald-500 text-6xl mb-4 transition-colors duration-300 hover:text-emerald-800 hover:scale-110 "></i>
+        <p class="text-gray-700 text-sm font-medium uppercase">Select Your Material</p>
+      </div>
 
-            <!-- Step 2 -->
-            <div class="flex flex-col items-center" data-aos="fade-up" data-aos-duration="800">
-                <i
-                    class="fa-solid fa-pencil-ruler text-emerald-500 text-6xl mb-4 transition-colors duration-300 hover:text-emerald-800 hover:scale-110 "></i>
-                <p class="text-gray-700 text-sm font-medium uppercase">Create Your Design</p>
-            </div>
+      <!-- Step 2 -->
+      <div class="flex flex-col items-center" data-aos="fade-up" data-aos-duration="800">
+        <i
+          class="fa-solid fa-pencil-ruler text-emerald-500 text-6xl mb-4 transition-colors duration-300 hover:text-emerald-800 hover:scale-110 "></i>
+        <p class="text-gray-700 text-sm font-medium uppercase">Create Your Design</p>
+      </div>
 
-            <!-- Step 3 -->
-            <div class="flex flex-col items-center" data-aos="fade-up" data-aos-duration="1100">
-                <i
-                    class="fa-solid fa-hard-hat text-emerald-500 text-6xl mb-4 transition-colors duration-300 hover:text-emerald-800 hover:scale-110 "></i>
-                <p class="text-gray-700 text-sm font-medium uppercase">We Construct Your Home</p>
-            </div>
+      <!-- Step 3 -->
+      <div class="flex flex-col items-center" data-aos="fade-up" data-aos-duration="1100">
+        <i
+          class="fa-solid fa-hard-hat text-emerald-500 text-6xl mb-4 transition-colors duration-300 hover:text-emerald-800 hover:scale-110 "></i>
+        <p class="text-gray-700 text-sm font-medium uppercase">We Construct Your Home</p>
+      </div>
 
-            <!-- Step 4 -->
-            <div class="flex flex-col items-center" data-aos="fade-up" data-aos-duration="1400">
-                <i
-                    class="fa-solid fa-house-chimney text-emerald-500 text-6xl mb-4 transition-colors duration-300 hover:text-emerald-800 hover:scale-110 "></i>
-                <p class="text-gray-700 text-sm font-medium uppercase">You Move In</p>
-            </div>
+      <!-- Step 4 -->
+      <div class="flex flex-col items-center" data-aos="fade-up" data-aos-duration="1400">
+        <i
+          class="fa-solid fa-house-chimney text-emerald-500 text-6xl mb-4 transition-colors duration-300 hover:text-emerald-800 hover:scale-110 "></i>
+        <p class="text-gray-700 text-sm font-medium uppercase">You Move In</p>
+      </div>
 
 
-        </div>
     </div>
+  </div>
 </section>
 
 
@@ -382,7 +382,8 @@
           <div class="bg-white text-black p-8 rounded-2xl shadow-xl">
             <img src="https://randomuser.me/api/portraits/men/32.jpg"
               class="w-20 h-20 mx-auto rounded-full mb-4 border-4 border-gray-200 shadow" alt="">
-            <p class="text-lg italic mb-4">"This platform completely transformed the way we work. Excellent support and design!"</p>
+            <p class="text-lg italic mb-4">"This platform completely transformed the way we work. Excellent support and
+              design!"</p>
             <h4 class="font-bold text-xl">John Carter</h4>
             <p class="text-sm text-gray-500">CEO, BrightTech</p>
           </div>
@@ -404,7 +405,8 @@
           <div class="bg-white text-black p-8 rounded-2xl shadow-xl">
             <img src="https://randomuser.me/api/portraits/men/75.jpg"
               class="w-20 h-20 mx-auto rounded-full mb-4 border-4 border-gray-200 shadow" alt="">
-            <p class="text-lg italic mb-4">"Highly recommend this service to anyone looking for quality and reliability."</p>
+            <p class="text-lg italic mb-4">"Highly recommend this service to anyone looking for quality and
+              reliability."</p>
             <h4 class="font-bold text-xl">Michael Johnson</h4>
             <p class="text-sm text-gray-500">Entrepreneur</p>
           </div>
@@ -433,61 +435,61 @@
 
 
 <script>
-// ===== Banner Carousel =====
-const bannerSlides = document.querySelectorAll(".banner-slider-item");
-const bannerDots = document.querySelectorAll(".banner-dot");
-let bannerIndex = 0;
+  // ===== Banner Carousel =====
+  const bannerSlides = document.querySelectorAll(".banner-slider-item");
+  const bannerDots = document.querySelectorAll(".banner-dot");
+  let bannerIndex = 0;
 
-function showBannerSlide(i) {
-  bannerSlides.forEach((slide, idx) => {
-    slide.style.opacity = idx === i ? "1" : "0";
-  });
-  bannerDots.forEach((dot, idx) => {
-    dot.classList.toggle("bg-green-600", idx === i);
-    dot.classList.toggle("bg-gray-400", idx !== i);
-  });
-}
+  function showBannerSlide(i) {
+    bannerSlides.forEach((slide, idx) => {
+      slide.style.opacity = idx === i ? "1" : "0";
+    });
+    bannerDots.forEach((dot, idx) => {
+      dot.classList.toggle("bg-green-600", idx === i);
+      dot.classList.toggle("bg-gray-400", idx !== i);
+    });
+  }
 
-bannerDots.forEach((dot, i) => {
-  dot.addEventListener("click", () => {
-    bannerIndex = i;
+  bannerDots.forEach((dot, i) => {
+    dot.addEventListener("click", () => {
+      bannerIndex = i;
+      showBannerSlide(bannerIndex);
+    });
+  });
+
+  setInterval(() => {
+    bannerIndex = (bannerIndex + 1) % bannerSlides.length;
     showBannerSlide(bannerIndex);
-  });
-});
+  }, 5000);
 
-setInterval(() => {
-  bannerIndex = (bannerIndex + 1) % bannerSlides.length;
   showBannerSlide(bannerIndex);
-}, 5000);
-
-showBannerSlide(bannerIndex);
 
 
-// ===== Testimonial Carousel =====
-const testimonialSlides = document.querySelectorAll(".testimonial-slider-item");
-let testimonialIndex = 0;
+  // ===== Testimonial Carousel =====
+  const testimonialSlides = document.querySelectorAll(".testimonial-slider-item");
+  let testimonialIndex = 0;
 
-function showTestimonialSlide(i) {
-  const carousel = document.getElementById("testimonial-carousel");
-  carousel.style.transform = `translateX(-${i * 100}%)`;
-}
+  function showTestimonialSlide(i) {
+    const carousel = document.getElementById("testimonial-carousel");
+    carousel.style.transform = `translateX(-${i * 100}%)`;
+  }
 
-function prevTestimonial() {
-  testimonialIndex = (testimonialIndex - 1 + testimonialSlides.length) % testimonialSlides.length;
+  function prevTestimonial() {
+    testimonialIndex = (testimonialIndex - 1 + testimonialSlides.length) % testimonialSlides.length;
+    showTestimonialSlide(testimonialIndex);
+  }
+
+  function nextTestimonial() {
+    testimonialIndex = (testimonialIndex + 1) % testimonialSlides.length;
+    showTestimonialSlide(testimonialIndex);
+  }
+
+  // auto-slide
+  setInterval(() => {
+    nextTestimonial();
+  }, 6000);
+
   showTestimonialSlide(testimonialIndex);
-}
-
-function nextTestimonial() {
-  testimonialIndex = (testimonialIndex + 1) % testimonialSlides.length;
-  showTestimonialSlide(testimonialIndex);
-}
-
-// auto-slide
-setInterval(() => {
-  nextTestimonial();
-}, 6000);
-
-showTestimonialSlide(testimonialIndex);
 </script>
 
 
