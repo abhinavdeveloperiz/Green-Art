@@ -3,6 +3,15 @@ from django.db import models
 # Create your models here.
 
 
+class Head_Carosel(models.Model):
+    image1 = models.ImageField(upload_to="carosel/")
+    image2 = models.ImageField(upload_to="carosel/")
+    created_at = models.DateTimeField(auto_now_add=True)  # add this for ordering
+
+    def __str__(self):
+        return f"Carousel {self.id}"
+
+
 class Project(models.Model):
     image = models.ImageField(upload_to="project_image/")
     PROJECT_TYPES = [
