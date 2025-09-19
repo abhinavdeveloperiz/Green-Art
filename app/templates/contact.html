@@ -96,38 +96,37 @@
 
             <script>
                 (function () {
-                    // REPLACE this with the recipient (your) WhatsApp number in international format WITHOUT + or leading zeros
-                    const RECIPIENT_PHONE = "918943303889"; // example: 91 for India + number
-
+                    const RECIPIENT_PHONE = "918943303889"; // your number
                     const form = document.getElementById('contactForm');
 
                     form.addEventListener('submit', function (e) {
-                        e.preventDefault(); // stop normal POST
+                        e.preventDefault();
 
-                        // get values
+                        // collect values
                         const name = document.getElementById('name').value.trim();
                         const phone = document.getElementById('phone').value.trim();
                         const subject = document.getElementById('subject').value.trim();
                         const message = document.getElementById('message').value.trim();
 
-                        // build the message text (change format as you like)
-                        let text = `*New Enquiry*%0A`;
-                        text += `*Name:* ${encodeURIComponent(name)}%0A`;
-                        text += `*Phone:* ${encodeURIComponent(phone)}%0A`;
-                        text += `*Subject:* ${encodeURIComponent(subject)}%0A`;
-                        text += `*Message:* ${encodeURIComponent(message)}%0A%0A`;
+                        const finalMessage = `New Enquiry\n\nName: ${name}\nPhone: ${phone}\nSubject: ${subject}\nMessage: ${message}`;
 
-                        // Some WhatsApp endpoints prefer pre-encoded or plain; we'll use encodeURI for safety of the whole URL
-                        // Use wa.me link (opens WhatsApp app or Web)
-                        const waLink = `https://wa.me/${RECIPIENT_PHONE}?text=${encodeURIComponent(
-                            `New Enquiry\n\nName: ${name}\nPhone: ${phone}\nSubject: ${subject}\nMessage: ${message}`
-                        )}`;
+                        // detect device
+                        const isMobile = /Android|iPhone|iPad|iPod|Opera Mini|IEMobile/i.test(navigator.userAgent);
 
-                        // For desktop where some browsers block navigation in same tab, open in new tab/window
-                        window.open(waLink, '_blank');
+                        let waLink = "";
+                        if (isMobile) {
+                            // Mobile → opens WhatsApp app
+                            waLink = `https://wa.me/${RECIPIENT_PHONE}?text=${encodeURIComponent(finalMessage)}`;
+                        } else {
+                            // Desktop → force WhatsApp Web
+                            waLink = `https://web.whatsapp.com/send?phone=${RECIPIENT_PHONE}&text=${encodeURIComponent(finalMessage)}`;
+                        }
+
+                        window.open(waLink, "_blank");
                     });
                 })();
             </script>
+
 
         </div>
 
