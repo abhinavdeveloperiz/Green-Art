@@ -38,5 +38,39 @@ class Project(models.Model):
 
 
 class Images(models.Model):
-    title=models.CharField(max_length=100)
-    image=models.ImageField(upload_to="gallery_image/")
+    title = models.CharField(max_length=100)
+    image = models.ImageField(upload_to="gallery_image/")
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = "Image"
+        verbose_name_plural = "Images"
+
+    
+class Testimonials(models.Model):
+    name=models.CharField(max_length=100)
+    feedback=models.TextField()
+    image=models.ImageField(upload_to="testimonials/")
+
+    def __str__(self):
+        return self.name
+    
+    class Meta:
+        verbose_name = "Testimonial"
+        verbose_name_plural = "Testimonials"
+    
+
+
+class Contact(models.Model):
+    name = models.CharField(max_length=100)
+    phone = models.CharField(max_length=15)
+    subject = models.CharField(max_length=200)
+    message = models.TextField()
+
+    def __str__(self):
+        return f"{self.name} ({self.phone})"
+
+
+

@@ -204,7 +204,7 @@
     <!-- Right Content -->
     <div class="w-full lg:w-1/2 text-gray-700">
       <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-900" >
-        ABOUT US
+        OUR STORY
       </h2>
       <p class="mb-4 leading-relaxed text-justify" data-aos="fade-up-left">
         In 2018, we started with a simple dream and a small space. That was the beginning of GreenArt
@@ -376,42 +376,19 @@
 
       <!-- Slides -->
       <div id="testimonial-carousel" class="flex transition-transform duration-700">
-
+        {% for t in testimonials %}
         <!-- Slide 1 -->
         <div class="testimonial-slider-item w-full flex-shrink-0 px-6">
           <div class="bg-white text-black p-8 rounded-2xl shadow-xl">
-            <img src="https://randomuser.me/api/portraits/men/32.jpg"
-              class="w-20 h-20 mx-auto rounded-full mb-4 border-4 border-gray-200 shadow" alt="">
-            <p class="text-lg italic mb-4">"This platform completely transformed the way we work. Excellent support and
-              design!"</p>
-            <h4 class="font-bold text-xl">John Carter</h4>
-            <p class="text-sm text-gray-500">CEO, BrightTech</p>
+            <img src="{{ t.image.url }}"
+              class="w-20 h-20 mx-auto rounded-full mb-4 border-4 border-gray-200 shadow  object-cover" alt="profile">
+            <p class="text-lg italic mb-4">"{{t.feedback}}"</p>
+            <h4 class="font-bold text-xl">{{t.name}}</h4>
           </div>
         </div>
+        {% endfor %}
 
-        <!-- Slide 2 -->
-        <div class="testimonial-slider-item w-full flex-shrink-0 px-6">
-          <div class="bg-white text-black p-8 rounded-2xl shadow-xl">
-            <img src="https://randomuser.me/api/portraits/women/65.jpg"
-              class="w-20 h-20 mx-auto rounded-full mb-4 border-4 border-gray-200 shadow" alt="">
-            <p class="text-lg italic mb-4">"The best experience I've ever had! Everything runs so smoothly now."</p>
-            <h4 class="font-bold text-xl">Sophia Lee</h4>
-            <p class="text-sm text-gray-500">Marketing Manager</p>
-          </div>
-        </div>
-
-        <!-- Slide 3 -->
-        <div class="testimonial-slider-item w-full flex-shrink-0 px-6">
-          <div class="bg-white text-black p-8 rounded-2xl shadow-xl">
-            <img src="https://randomuser.me/api/portraits/men/75.jpg"
-              class="w-20 h-20 mx-auto rounded-full mb-4 border-4 border-gray-200 shadow" alt="">
-            <p class="text-lg italic mb-4">"Highly recommend this service to anyone looking for quality and
-              reliability."</p>
-            <h4 class="font-bold text-xl">Michael Johnson</h4>
-            <p class="text-sm text-gray-500">Entrepreneur</p>
-          </div>
-        </div>
-
+        
       </div>
 
       <!-- Navigation Arrows -->

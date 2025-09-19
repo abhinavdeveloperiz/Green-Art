@@ -2,7 +2,7 @@
 {% load static %}
 {% block content %}
 
-<section class="relative bg-cover bg-center h-[60vh] flex items-center justify-center text-white"
+<section class="relative bg-cover bg-center h-[40vh] flex items-center justify-center text-white"
     style="background-image: url('/static/images/header_img.jpeg');">
     <div class="absolute inset-0 bg-black/50"></div>
     <div class="relative z-10 text-center px-6 ">
@@ -17,7 +17,7 @@
 <section class="py-10 bg-gray-50">
   <div class="max-w-6xl mx-auto px-4">
     <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-6">
-      {% for image in images %}
+      {% for image in page_obj %}
       <div 
         class="overflow-hidden rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 cursor-pointer"
         onclick="openModal('{{ image.image.url }}')" 
@@ -28,7 +28,26 @@
           class="w-full h-40 sm:h-48 md:h-64 lg:h-80 object-cover transform hover:scale-105 transition-transform duration-500" 
         >
       </div>
+      {% empty %}
+        <p class="text-center col-span-3 text-gray-600">No images available.</p>
       {% endfor %}
+    </div>
+
+    <!-- Pagination -->
+    <div class="flex justify-center items-center mt-8 space-x-2">
+      {% if page_obj.has_previous %}
+        <a href="?page=1" class="px-3 py-1 border rounded hover:bg-gray-200">&laquo; First</a>
+        <a href="?page={{ page_obj.previous_page_number }}" class="px-3 py-1 border rounded hover:bg-gray-200">Previous</a>
+      {% endif %}
+
+      <span class="px-3 py-1 border rounded bg-gray-800 text-white">
+        Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+      </span>
+
+      {% if page_obj.has_next %}
+        <a href="?page={{ page_obj.next_page_number }}" class="px-3 py-1 border rounded hover:bg-gray-200">Next</a>
+        <a href="?page={{ page_obj.paginator.num_pages }}" class="px-3 py-1 border rounded hover:bg-gray-200">Last &raquo;</a>
+      {% endif %}
     </div>
   </div>
 </section>
