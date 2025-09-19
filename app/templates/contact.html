@@ -67,26 +67,24 @@
 
 
             <!-- Contact Form -->
-            <form method="POST" action="" class="space-y-4">
+            <form id="contactForm" method="POST" action="" class="space-y-4">
                 {% csrf_token %}
 
-
-
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <input type="text" name="name" placeholder="Your Name"
+                    <input type="text" name="name" id="name" placeholder="Your Name"
                         class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-green-600 outline-none"
                         required>
 
-                    <input type="text" name="phone" placeholder="Your Phone"
+                    <input type="text" name="phone" id="phone" placeholder="Your Phone"
                         class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-green-600 outline-none"
                         required>
                 </div>
 
-                <input type="text" name="subject" placeholder="Subject"
+                <input type="text" name="subject" id="subject" placeholder="Subject"
                     class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-green-600 outline-none"
                     required>
 
-                <textarea name="message" rows="5" placeholder="Your Message"
+                <textarea name="message" id="message" rows="5" placeholder="Your Message"
                     class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-green-600 outline-none"
                     required></textarea>
 
@@ -95,6 +93,41 @@
                     Send Message
                 </button>
             </form>
+
+            <script>
+                (function () {
+                    // REPLACE this with the recipient (your) WhatsApp number in international format WITHOUT + or leading zeros
+                    const RECIPIENT_PHONE = "919876543210"; // example: 91 for India + number
+
+                    const form = document.getElementById('contactForm');
+
+                    form.addEventListener('submit', function (e) {
+                        e.preventDefault(); // stop normal POST
+
+                        // get values
+                        const name = document.getElementById('name').value.trim();
+                        const phone = document.getElementById('phone').value.trim();
+                        const subject = document.getElementById('subject').value.trim();
+                        const message = document.getElementById('message').value.trim();
+
+                        // build the message text (change format as you like)
+                        let text = `*New Enquiry*%0A`;
+                        text += `*Name:* ${encodeURIComponent(name)}%0A`;
+                        text += `*Phone:* ${encodeURIComponent(phone)}%0A`;
+                        text += `*Subject:* ${encodeURIComponent(subject)}%0A`;
+                        text += `*Message:* ${encodeURIComponent(message)}%0A%0A`;
+
+                        // Some WhatsApp endpoints prefer pre-encoded or plain; we'll use encodeURI for safety of the whole URL
+                        // Use wa.me link (opens WhatsApp app or Web)
+                        const waLink = `https://wa.me/${RECIPIENT_PHONE}?text=${encodeURIComponent(
+                            `New Enquiry\n\nName: ${name}\nPhone: ${phone}\nSubject: ${subject}\nMessage: ${message}`
+                        )}`;
+
+                        // For desktop where some browsers block navigation in same tab, open in new tab/window
+                        window.open(waLink, '_blank');
+                    });
+                })();
+            </script>
 
         </div>
 
